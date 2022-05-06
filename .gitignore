@@ -39,8 +39,6 @@
 
 # Mac env file
 *.dSYM
-/myProgram
-.DS_Store
 
 # General
 .DS_Store
