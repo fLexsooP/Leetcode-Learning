@@ -16,6 +16,26 @@ int main(int argc, char const *argv[])
         }
         
     }
+    for (size_t i = 0; i < count; i++)
+    {
+        /* code */
+    }
+    while (/* condition */)
+    {
+        /* code */
+    }
+    if (/* condition */)
+    {
+        /* code */
+    }
+    else if (/* condition */)
+    {
+        /* code */
+    }
+    else
+    {
+        /* code */
+    }
     
     return 0;
 }
