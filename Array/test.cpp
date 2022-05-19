@@ -10,11 +10,10 @@ int main(int argc, char const *argv[])
     {
         if (f == g)
         {
-            f->g;
+            f -> g;
             f >= g;//
             1000
         }
-        
     }
     for (size_t i = 0; i < count; i++)
     {
