@@ -19,22 +19,6 @@ int main(int argc, char const *argv[])
     {
         /* code */
     }
-    while (/* condition */)
-    {
-        /* code */
-    }
-    if (/* condition */)
-    {
-        /* code */
-    }
-    else if (/* condition */)
-    {
-        /* code */
-    }
-    else
-    {
-        /* code */
-    }
     
     return 0;
 }
