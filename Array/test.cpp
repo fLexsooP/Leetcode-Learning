@@ -15,10 +15,5 @@ int main(int argc, char const *argv[])
             1000
         }
     }
-    for (size_t i = 0; i < count; i++)
-    {
-        /* code */
-    }
-    
     return 0;
 }
