@@ -92,8 +92,7 @@ int main(int argc, char const *argv[])
     t.addAtTail(7);
     t.printLinkedList();
     
-    int test = t.get(1);
-    cout << test << endl;
+    cout << t.get(1) << endl;
     
     t.deleteAtIndex(1);
     t.printLinkedList();
