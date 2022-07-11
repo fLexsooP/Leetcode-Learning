@@ -54,7 +54,7 @@ public:
     }
     
     void deleteAtIndex(int index) {
-        if(index > _size || index < 0) {
+        if(index >= _size || index < 0) {
             return;
         }
         LinkedNode* cur = _dummyHead;
