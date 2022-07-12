@@ -1,4 +1,3 @@
-#include <iostream>
 
 /**
  * Definition for singly-linked list.
@@ -13,30 +12,28 @@
 class Solution {
 public:
     struct ListNode {
-         int val;
-        ListNode* next;
+        int val;
+        ListNode *next;
         ListNode() : val(0), next(nullptr) {}
         ListNode(int x) : val(x), next(nullptr) {}
         ListNode(int x, ListNode *next) : val(x), next(next) {}
     };
-    
-    ListNode* removeElements(ListNode* head, int val) {
-        ListNode* dummyHead = new ListNode(0);
-        dummyHead->next = head;
+
+    ListNode* deleteMiddle(ListNode* head) {
+
+        ListNode* dummyHead = new ListNode(0, head);
         ListNode* cur = dummyHead;
 
-        while(cur->next != nullptr) {
-            if(cur->next->val == val) {
-                ListNode* temp = cur->next;
-                cur->next = cur->next->next;
-                delete temp;
-            } else {
-                cur = cur->next;
-            }
+        ListNode* fast = dummyHead;
+        ListNode* slow = dummyHead;
+
+        while(fast->next && fast->next->next) {
+            slow = slow->next;
+            fast = fast->next->next;
         }
+        slow->next = slow->next->next;
         head = dummyHead->next;
         delete dummyHead;
         return head;
     }
 };
-
