@@ -21,8 +21,7 @@ public:
     };
     
     ListNode* removeElements(ListNode* head, int val) {
-        ListNode* dummyHead = new ListNode(0);
-        dummyHead->next = head;
+        ListNode* dummyHead = new ListNode(0, head);
         ListNode* cur = dummyHead;
 
         while(cur->next != nullptr) {
