@@ -37,6 +37,7 @@
 # vscode setting
 /.vscode
 *.pdf
+*.txt
 
 # Mac env file
 *.dSYM
