@@ -18,6 +18,13 @@ public:
         ListNode(int x, ListNode *next) : val(x), next(next) {}
     };
     ListNode* reverseList(ListNode* head) {
-        
+        ListNode* prev = nullptr;
+        while(head) {
+            ListNode* next = head->next;
+            head->next = prev;
+            prev = head;
+            head = next;
+        }
+        return head;
     }
 };
