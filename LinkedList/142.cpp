@@ -18,6 +18,20 @@ public:
         ListNode(int x, ListNode *next) : val(x), next(next) {}
     };
     ListNode *detectCycle(ListNode *head) {
-        
+        ListNode* fast = head;
+        ListNode* slow = head;
+        while(fast && fast->next) {
+            slow = slow->next;
+            fast = fast->next->next;
+            if(fast == slow) {
+                slow = head;
+                while(slow != fast) {
+                    slow = slow->next;
+                    fast = fast->next;
+                }
+                return slow;
+            }
+        }
+        return nullptr;
     }
 };
