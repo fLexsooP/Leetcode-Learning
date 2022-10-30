@@ -22,6 +22,8 @@ public:
     {
         vector<int> res;
         stack<TreeNode*> st;
+        if (root == NULL)
+            return res;
         st.push(root);
         while (!st.empty())
         {
@@ -35,10 +37,13 @@ public:
         }
         return res;
     }
+    
     vector<int> postorderTraversal(TreeNode *root)
     {
         vector<int> res;
         stack<TreeNode *> st;
+        if (root == NULL)
+            return res;
         st.push(root);
         while (!st.empty())             // m-r-l
         {
@@ -53,11 +58,26 @@ public:
         reverse(res.begin(), res.end());// l-r-m
         return res;
     }
+
     vector<int> inorderTraversal(TreeNode *root)
     {
         vector<int> res;
+        stack<TreeNode*> st;
+        TreeNode* cur = root;
+        while (!st.empty() || cur != NULL)
+        {
+            while (cur != NULL)
+            {
+                st.push(cur);
+                cur = cur->left;
+            }
+            cur = st.top();
+            st.pop();
+            res.push_back(cur->val);
+            cur = cur->right;
+        }
         return res;
-    };
+    }
 };
 
 
@@ -74,11 +94,11 @@ public:
                     1
                 /       \
             2               3
-          /    \           /  \
+          /    \          /   \
         4       5       6       7
         */
         Solution s = Solution();
-        vector<int> vec = s.postorderTraversal(&node);
+        vector<int> vec = s.preorderTraversal(&node);
         for (auto &&n : vec)
         {
             cout << n;
