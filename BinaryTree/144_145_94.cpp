@@ -23,7 +23,7 @@ public:
         traversal(root, res);
         return res;
     }
-    void traversal(TreeNode *cur, vector<int>& res)
+    void traversal(TreeNode *cur, vector<int> &res)
     {
         if (cur == NULL)
             return;
@@ -54,6 +54,6 @@ int main(int argc, char const *argv[])
     {
         cout << n;
     }
-    
+
     return 0;
 }
