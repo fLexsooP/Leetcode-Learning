@@ -39,7 +39,8 @@
 
 
 # vscode setting
-/.vscode
+.vscode/*
+!.vscode/*.code-snippets
 *.pdf
 *.txt
 
