@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <queue>
 
 using namespace std;
 // Definition for a binary tree node.
@@ -16,8 +17,28 @@ struct TreeNode
 class Solution
 {
 public:
-    vector<int> rightSideView(TreeNode* root) {
-        
+    vector<int> rightSideView(TreeNode* root)
+    {
+        queue<TreeNode*> q;
+        vector<int> res;
+        if (root != NULL)
+            q.push(root);
+        while (!q.empty())
+        {
+            int size = q.size();
+            TreeNode* cur;
+            while (size--)
+            {
+                cur = q.front();
+                q.pop();
+                if (cur->left)
+                    q.push(cur->left);
+                if (cur->right)
+                    q.push(cur->right);
+            }
+            res.push_back(cur->val);
+        }
+        return res;
     }
 };
 int main(int argc, char const *argv[])

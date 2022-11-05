@@ -11,8 +11,7 @@
 		"prefix": "treesetup",
 		"body": [
 			"#include <iostream>",
-
-
+			"#include <vector>",
 			"\n\nusing namespace std;",
 			"// Definition for a binary tree node.",
 			"struct TreeNode",
