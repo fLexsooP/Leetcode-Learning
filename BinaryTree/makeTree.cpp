@@ -56,7 +56,7 @@ public:
             q.push(cur->left);
             q.push(cur->right);
             q.pop();
-        }
+        } 
     }
 };
 int main(int argc, char const *argv[])
