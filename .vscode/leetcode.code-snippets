@@ -6,7 +6,7 @@
 	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
 	// Placeholders with the same ids are connected.
 	// Example:
-	"TreeTest": {
+	"TreeSetup": {
 		"scope": "cpp",
 		"prefix": "treesetup",
 		"body": [
@@ -30,7 +30,14 @@
 			"public:",
 			"\t${1:funcName}",
 			"};",
-
+		],
+		"description": "setup for tree problem.",
+	},
+	
+	"TreeTest": {
+		"scope": "cpp",
+		"prefix": "treetest",
+		"body": [
 			"int main(int argc, char const *argv[])",
 			"{",
 			"\tTreeNode node = TreeNode(1);",
@@ -58,7 +65,7 @@
 		"description": "test case for tree problem.",
 	},
 
-	"LinkedListTest": {
+	"LinkedListSetup": {
 		"scope": "cpp",
 		"prefix": "llsetup",
 		"body": [
