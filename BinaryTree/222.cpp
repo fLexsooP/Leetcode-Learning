@@ -1,11 +1,9 @@
 #include <iostream>
 #include <vector>
 
-
 using namespace std;
 // Definition for a binary tree node.
-struct TreeNode
-{
+struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
@@ -14,23 +12,20 @@ struct TreeNode
     TreeNode(int x, TreeNode *left, TreeNode *right)
         : val(x), left(left), right(right) {}
 };
-class Solution
-{
-public:
-    int countNodes(TreeNode* root) {
+class Solution {
+   public:
+    int countNodes(TreeNode *root) {
         if (root = 0)
             return NULL;
-        TreeNode* left = root->left;
-        TreeNode* right = root->right;
+        TreeNode *left = root->left;
+        TreeNode *right = root->right;
         int leftLength = 0;
         int rightLength = 0;
-        while (left)
-        {
+        while (left) {
             left = left->left;
             leftLength++;
         }
-        while (right)
-        {
+        while (right) {
             right = right->right;
             rightLength++;
         }
