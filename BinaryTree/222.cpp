@@ -37,6 +37,6 @@ public:
         if (leftLength == rightLength) {
             return (2 << leftLength) - 1;
         }
-        return coutnNodes(left) + countNodes(right) + 1;
+        return countNodes(root->left) + countNodes(root->right) + 1;
     }
 };
