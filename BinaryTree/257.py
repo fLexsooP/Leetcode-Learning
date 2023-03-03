@@ -22,3 +22,14 @@ class Solution:
             self.traversal(cur.left, path + '->', res)
         if cur.right:
             self.traversal(cur.right, path + '->', res)
+            
+s = Solution()
+n5 = TreeNode(5)
+n6 = TreeNode(6)
+n8 = TreeNode(8)
+n3 = TreeNode(3, n6, None)
+n4 = TreeNode(4, n8, None)
+n2 = TreeNode(2, n4, n5)
+n1 = TreeNode(1, n2, n3)
+res = s.binaryTreePaths(n1)
+print(res)
