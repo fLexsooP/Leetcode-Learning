@@ -17,11 +17,12 @@ class Solution:
             if postorder_end - postorder_begin == 1:
                 return root
             
-            delimiter = 0
-            for value in inorder:
-                if value == root_value:
-                    break
-                delimiter += 1
+            # delimiter = 0
+            # for value in inorder:
+            #     if value == root_value:
+            #         break
+            #     delimiter += 1
+            delimiter = inorder.index(root_value)
             
             # left_inorder = [i for i in inorder[:delimiter]]
             # right_inorder = [i for i in inorder[delimiter + 1:]]
