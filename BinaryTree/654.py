@@ -24,6 +24,4 @@ class Solution:
             root.right = traversal(nums, max_index + 1, end)
             return root
         
-        if len(nums) == 0:
-                return None
         return traversal(nums, 0, len(nums))
