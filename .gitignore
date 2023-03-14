@@ -42,7 +42,7 @@
 .vscode/*
 !.vscode/*.code-snippets
 *.pdf
-*.txt
+# *.txt
 
 # Mac env file
 *.dSYM
