@@ -22,3 +22,17 @@ class Solution:
             if list[i] <= list[i - 1]:
                 return False
         return True
+
+    prev = None
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        if root == None:
+            return True
+        left = self.isValidBST(root.left)
+
+        if self.prev != None and self.prev.val >= root.val:
+            return False
+        self.prev = root
+
+        right = self.isValidBST(root.right)
+
+        return left and right
