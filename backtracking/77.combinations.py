@@ -11,7 +11,7 @@ class Solution:
             self.res.append(self.path[:])
             return
 
-        for i in range(start, n + 1):
+        for i in range(start, n + 1 - (k - len(self.path)) + 1):
             self.path.append(i)
             self.backtracking(n, k, i + 1)
             self.path.pop()
