@@ -26,7 +26,7 @@ class Solution:
                 res.append(combo[:])
                 return
 
-            digit = int(digits[index]) - int("0")
+            digit = int(digits[index])
             letters = self.letterMap[digit]
 
             for i in range(len(letters)):
