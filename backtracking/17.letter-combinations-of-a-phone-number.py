@@ -34,10 +34,10 @@ class Solution:
                 backtracking(index + 1, combo)
                 combo = combo[:-1]
 
-        if len(digits) == 0:
-            return []
 
         res = []
+        if len(digits) == 0:
+            return res
         backtracking(0, "")
         return res
 # @lc code=end
