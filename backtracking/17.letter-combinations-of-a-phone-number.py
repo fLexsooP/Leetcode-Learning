@@ -29,8 +29,13 @@ class Solution:
             digit = int(digits[index])
             letters = self.letterMap[digit]
 
-            for i in range(len(letters)):
-                combo += letters[i]
+            # for i in range(len(letters)):
+            #     combo += letters[i]
+            #     backtracking(index + 1, combo)
+            #     combo = combo[:-1]
+
+            for letter in letters:
+                combo += letter
                 backtracking(index + 1, combo)
                 combo = combo[:-1]
 
