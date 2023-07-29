@@ -8,17 +8,16 @@
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
         def backtracking(path, startIndex, sum):
-            if sum > target:
-                return
             if sum == target:
                 res.append(path[:])
 
             for i in range(startIndex, len(candidates)):
-
                 if candidates[i] == candidates[i - 1] and i > startIndex:
                     continue
 
                 sum += candidates[i]
+                if sum > target:
+                    return
                 path.append(candidates[i])
                 backtracking(path, i + 1, sum)
                 sum -= path[-1]
