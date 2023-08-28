@@ -74,5 +74,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+.pytest_cache/
 test/
 test-*.txt
