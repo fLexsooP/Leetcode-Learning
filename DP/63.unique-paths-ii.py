@@ -14,13 +14,13 @@ class Solution:
 
         for i in range(m):
             for j in range(n):
-                if i > 0 and obstacleGrid[i - 1][j] != 1:
+                if obstacleGrid[i][j] == 1:
+                    dp[i][j] = 0
+                    continue
+                if i > 0:
                     dp[i][j] += dp[i - 1][j]
-                if j > 0 and obstacleGrid[i][j - 1] != 1:
+                if j > 0:
                     dp[i][j] += dp[i][j - 1]
-
-        if obstacleGrid[-1][-1] == 1:
-            return 0
 
         return dp[-1][-1]
 # @lc code=end
