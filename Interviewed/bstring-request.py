@@ -6,28 +6,31 @@
 '''
 
 def foo(bstr, req):
-    def flip():
-        for i in range(len(blist)):
-            if blist[i] == "0":
-                blist[i] = "1"
-            else:
-                blist[i] = "0"
-
+    n = len(bstr)
+    count_1 = [0] * (n + 1)
     res = []
-    blist = list(bstr)
 
+    for i in range(n):
+        if bstr[i] == "1":
+            count_1[i + 1] = count_1[i] + 1
+        else:
+            count_1[i + 1] = count_1[i]
+
+    isFlip = False
+    # print(count_1)
     for r in req:
         if r == "flip":
-            flip()
-            # print(blist)
+            isFlip = not isFlip
         else:
             index = int(r[6:])
-            # print(index)
-            # TODO: count before index
+            if isFlip:
+                res.append(index - count_1[index-1])
+            else:
+                res.append(count_1[index-1])
 
 
     return res
 
-bstring = "01101011101001"
-requests = ["count:4", "flip", "count:2", "flip", "count:8", "count:5", "flip", "count:10"]
+bstring = "1111010"
+requests = ["count:4", "count:6", "flip", "count:1", "flip", "count:2"]
 print(foo(bstring, requests))
