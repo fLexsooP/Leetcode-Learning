@@ -8,26 +8,21 @@
 class Solution {
     public int[] productExceptSelf(int[] nums) {
         int n = nums.length;
-        int[] preProduct = new int[n];
-        int[] postProduct = new int[n];
+        int[] prod = new int[n];
 
-        preProduct[0] = 1;
-        preProduct[1] = nums[0];
+        prod[0] = 1;
+        prod[1] = nums[0];
         for (int i = 1; i < n; i++) {
-            preProduct[i] = preProduct[i - 1] * nums[i - 1];
+            prod[i] = prod[i - 1] * nums[i - 1];
         }
 
-        postProduct[n - 1] = 1;
-        postProduct[n - 2] = nums[n - 1];
+        int temp = 1;
         for (int i = n - 2; i > -1; i--) {
-            postProduct[i] = postProduct[i + 1] * nums[i + 1];
+            temp = temp * nums[i + 1];
+            prod[i] *= temp;
         }
 
-        for (int i = 0; i < n; i++) {
-            preProduct[i] *= postProduct[i];
-        }
-        return preProduct;
-
+        return prod;
     }
 }
 // @lc code=end
