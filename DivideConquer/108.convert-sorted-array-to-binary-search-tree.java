@@ -1,4 +1,3 @@
-package DivideConquer;
 /*
  * @lc app=leetcode id=108 lang=java
  *
