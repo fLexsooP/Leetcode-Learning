@@ -8,22 +8,18 @@
 class Solution {
     public int findMin(int[] nums) {
         int left = 0;
-        int mid = 0;
         int right = nums.length - 1;
-        int minVal = Integer.MAX_VALUE;
 
-        while (left <= right) {
-            mid = left + ((right - left) / 2);
-            if (nums[left] < nums[mid] && nums[mid] < nums[right]) {
-                right = mid - 1;
-            } else if (nums[mid] < nums[left] && nums[mid] < nums[right]) {
-                right = mid - 1;
-            } else {
+        while (left < right) {
+            int mid = left + ((right - left) / 2);
+            // 23401
+            if (nums[mid] > nums[right]) {
                 left = mid + 1;
+            } else { // 01234 40123
+                right = mid;
             }
-            minVal = Math.min(minVal, nums[mid]);
         }
-        return Math.min(minVal, nums[mid]);
+        return nums[left];
     }
 }
 // @lc code=end
