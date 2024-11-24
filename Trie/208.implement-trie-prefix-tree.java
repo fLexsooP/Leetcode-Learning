@@ -1,3 +1,4 @@
+package Trie;
 /*
  * @lc app=leetcode id=208 lang=java
  *
